@@ -1,0 +1,47 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	/*
+	 * ===================================================================
+	 * EDGE QUANTA - CLOUDFLARE PAGES DEPLOYMENT CONFIGURATION
+	 * ===================================================================
+	 *
+	 * Nexartis deployment pipeline: Dev → Production
+	 *
+	 * Environments:
+	 * 🧪 Dev:        edgequanta-dev.pages.dev (dev testing)
+	 * 🚀 Production: TBD custom domain
+	 */
+
+	// ===================================================================
+	// PAGES PROJECT CONFIGURATION
+	// ===================================================================
+	"name": "edgequanta",
+	"compatibility_date": "2025-04-24",
+	"compatibility_flags": ["nodejs_compat"],
+	"pages_build_output_dir": "frontend/dist",
+
+	// Observability
+	"observability": {
+		"enabled": true
+	},
+
+	// ===================================================================
+	// D1 DATABASE BINDINGS
+	// ===================================================================
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "edgequanta-db-dev",
+			"database_id": "c919d1ae-c7bf-474d-9ad4-7b230c645513"
+		}
+	],
+
+	// ===================================================================
+	// ENVIRONMENT VARIABLES
+	// ===================================================================
+	"vars": {
+		"ENVIRONMENT": "development",
+		"CLOUDFLARE_ACCOUNT_ID": "80b6115de50fb9c334e34502dcab401d"
+	}
+}
+

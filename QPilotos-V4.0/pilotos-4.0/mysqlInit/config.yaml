@@ -1,0 +1,11 @@
+database:
+  host: "10.10.118.85"
+  port: 3306
+  username: "mcs"
+  password: "123456"
+  database: "QCloudConnectorServerDB_test60"
+
+# docker:
+#   image: "pilotos/backend:3.18"
+#   container_name: "pilotos-service"
+#   app_port: 8080

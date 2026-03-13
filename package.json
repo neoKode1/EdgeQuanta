@@ -1,0 +1,30 @@
+{
+  "name": "bitquanta",
+  "version": "1.0.0",
+  "description": "EdgeQuanta is a quantum infrastructure platform focused on making real superconducting quantum hardware usable like managed compute.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "cd frontend && npx vite",
+    "build": "cd frontend && npx tsc --noEmit && npx vite build",
+    "deploy:dev": "npm run build && npx wrangler pages deploy frontend/dist --project-name edgequanta",
+    "db:generate": "npx drizzle-kit generate",
+    "db:migrate:dev": "npx wrangler d1 execute edgequanta-db-dev --remote --file=./drizzle/migrations/0000_square_professor_monster.sql",
+    "db:studio": "npx drizzle-kit studio",
+    "test": "cd frontend && npx vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "drizzle-orm": "^0.45.1",
+    "resend": "^6.9.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260312.1",
+    "drizzle-kit": "^0.31.9",
+    "wrangler": "^4.72.0"
+  }
+}
